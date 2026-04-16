@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { supabase } from '../supabaseClient'
 
 function CreateBlog() {
-  const { id } = useParams()          // Present when editing
+  const { id } = useParams()   
   const isEditMode = Boolean(id)
   const navigate = useNavigate()
 
@@ -46,7 +46,7 @@ function CreateBlog() {
         .eq('id', id)
 
       if (error) {
-        console.error('Error updating blog:', error.message)
+        alert('Error updating blog:', error.message)
       } else {
         navigate('/')
       }
@@ -56,7 +56,7 @@ function CreateBlog() {
         .insert([{ title, description }])
 
       if (error) {
-        console.error('Error creating blog:', error.message)
+        alert('Error creating blog:', error.message)
       } else {
         navigate('/')
       }

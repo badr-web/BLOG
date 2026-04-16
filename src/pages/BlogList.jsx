@@ -19,7 +19,7 @@ function BlogList() {
       .order('created_at', { ascending: false })
 
     if (error) {
-      console.error('Error fetching blogs:', error.message)
+      alert('Error fetching blogs:', error.message)
     } else {
       setBlogs(data)
     }
@@ -29,7 +29,7 @@ function BlogList() {
   async function deleteBlog(id) {
     const { error } = await supabase.from('blogs').delete().eq('id', id)
     if (error) {
-      console.error('Error deleting blog:', error.message)
+      alert('Error deleting blog:', error.message)
     } else {
       setBlogs(blogs.filter((blog) => blog.id !== id))
     }
