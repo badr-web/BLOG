@@ -90,6 +90,19 @@ body {
   transform: none;
 }
 
+.btn-back {
+  background: none;
+  color: #495057;
+  border: 1px solid #ced4da;
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+}
+
+.btn-back:hover {
+  background-color: #f1f3f5;
+  opacity: 1;
+}
+
 /* ========================
    Container
    ======================== */

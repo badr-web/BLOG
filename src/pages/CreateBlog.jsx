@@ -68,6 +68,9 @@ function CreateBlog() {
   return (
     <div className="container">
       <div className="form-wrapper">
+        <button className="btn btn-back" onClick={() => navigate('/')}>
+          ← Retour
+        </button>
         <h2 className="form-title">
           {isEditMode ? 'Edit Blog' : 'Create a new Blog'}
         </h2>
