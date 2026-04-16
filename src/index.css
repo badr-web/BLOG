@@ -1,0 +1,244 @@
+/* ========================
+   Global Reset & Base
+   ======================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #f1f3f5;
+  color: #212529;
+  min-height: 100vh;
+}
+
+/* ========================
+   Navbar
+   ======================== */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.navbar-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+/* ========================
+   Buttons
+   ======================== */
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-create {
+  background-color: #2ecc71;
+  color: #ffffff;
+  font-size: 0.9rem;
+  padding: 9px 22px;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.btn-edit {
+  background-color: #2ecc71;
+  color: #ffffff;
+}
+
+.btn-save {
+  background-color: #4a5568;
+  color: #ffffff;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ========================
+   Container
+   ======================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* ========================
+   Blog Grid
+   ======================== */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================
+   Blog Card
+   ======================== */
+.blog-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.blog-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.blog-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #212529;
+}
+
+.blog-card-desc {
+  font-size: 0.875rem;
+  color: #6c757d;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.blog-card-date {
+  font-size: 0.78rem;
+  color: #adb5bd;
+}
+
+.blog-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* ========================
+   Create / Edit Form
+   ======================== */
+.form-wrapper {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 24px;
+}
+
+.blog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  color: #212529;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: #2ecc71;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  color: #212529;
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-textarea:focus {
+  border-color: #2ecc71;
+}
+
+/* ========================
+   Misc
+   ======================== */
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #6c757d;
+  font-size: 1rem;
+}
